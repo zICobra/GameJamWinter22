@@ -15,13 +15,15 @@ public class WaveSpawner : MonoBehaviour
     public class Wave
     {
         [SerializeField] public string name;
-        [SerializeField] public Transform enemy;
+        [SerializeField] public List<Transform> enemy = new List<Transform>();
         [SerializeField] public int enemyCount;
         [SerializeField] public float spawnRate;
     }
 
     [SerializeField] private Wave[] waves;
     [SerializeField] private Transform[] spawnPoints;
+
+    [SerializeField] private GameManager gameManager;
     
     private int nextWave = 0;
 
@@ -105,7 +107,7 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < _wave.enemyCount; i++)
         {
-            SpawnEnemy( _wave.enemy);
+            SpawnEnemy ( _wave.enemy);
             yield return new WaitForSeconds (1f / _wave.spawnRate);
         }
 
@@ -114,11 +116,12 @@ public class WaveSpawner : MonoBehaviour
         yield break;
     }
 
-    void SpawnEnemy(Transform _enemy)
+    void SpawnEnemy(List<Transform> enemy)
     {
         Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Instantiate(_enemy, sp.position, sp.rotation);
-        Debug.Log("Spawning Enemy : " + _enemy.name);
+        int spawnEnemy = Random.Range(0, enemy.Count);
+        Transform Prefab = Instantiate(enemy[spawnEnemy], sp.position, sp.rotation);
+        gameManager.EnemyCount();
     }
     
 }

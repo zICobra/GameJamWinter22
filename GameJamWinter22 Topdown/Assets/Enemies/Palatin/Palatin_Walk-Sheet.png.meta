@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2eae467ee0cb1c044b9f132bbd63ad34
+guid: d5a49e1eccfc7644bbfaaf3016784fd6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,106 +104,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_0
+      name: Palatin_Walk-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 62
-        height: 41
+        width: 163
+        height: 151
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.44785276, y: 0.5033113}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc155c7308ba0584aa044df16b7f93d0
-      internalID: 1620300063
+      spriteID: 72f57563b7c30a04e843a19a4eb12314
+      internalID: -1107773230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_1
+      name: Palatin_Walk-Sheet_1
       rect:
         serializedVersion: 2
-        x: 62
+        x: 163
         y: 0
-        width: 62
-        height: 41
+        width: 163
+        height: 151
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.44785276, y: 0.5033113}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9409ca6f509e16c49b845becff108498
-      internalID: 610437194
+      spriteID: 5c388d4aca4242f45b1ba5df32e9b57a
+      internalID: 960495215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_2
+      name: Palatin_Walk-Sheet_2
       rect:
         serializedVersion: 2
-        x: 124
+        x: 326
         y: 0
-        width: 62
-        height: 41
+        width: 163
+        height: 151
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.44785276, y: 0.5033113}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aac2944d7bc6a5e42a5fb8828d27f9ed
-      internalID: 1340653519
+      spriteID: 9d0798e213203a44aade11b55caa5406
+      internalID: -1123441933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_3
+      name: Palatin_Walk-Sheet_3
       rect:
         serializedVersion: 2
-        x: 186
+        x: 489
         y: 0
-        width: 62
-        height: 41
+        width: 163
+        height: 151
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.44785276, y: 0.5033113}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a577683a1297b1428c98671686ae79a
-      internalID: 1763752546
+      spriteID: d0424aa8aca347446b74f1336ecff7a3
+      internalID: 757499803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_4
+      name: Palatin_Walk-Sheet_4
       rect:
         serializedVersion: 2
-        x: 248
+        x: 652
         y: 0
-        width: 62
-        height: 41
+        width: 163
+        height: 151
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.44785276, y: 0.5033113}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c09a5ab826f7b43429c2ad2edcbf829f
-      internalID: -904231127
+      spriteID: 8d489942819e034499c1af9e5b360212
+      internalID: 1466106768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Palatin_Walk-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 0
+        width: 163
+        height: 151
+      alignment: 9
+      pivot: {x: 0.44785276, y: 0.5033113}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4aa1c56df927045b9e6e8e666390e6
+      internalID: -1463932188
       vertices: []
       indices: 
       edges: []
@@ -219,11 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Villager_03_Attack-Sheet_2: 1340653519
-      Villager_03_Attack-Sheet_0: 1620300063
-      Villager_03_Attack-Sheet_3: 1763752546
-      Villager_03_Attack-Sheet_4: -904231127
-      Villager_03_Attack-Sheet_1: 610437194
+      Palatin_Walk-Sheet_0: -1107773230
+      Palatin_Walk-Sheet_4: 1466106768
+      Palatin_Walk-Sheet_5: -1463932188
+      Palatin_Walk-Sheet_1: 960495215
+      Palatin_Walk-Sheet_3: 757499803
+      Palatin_Walk-Sheet_2: -1123441933
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

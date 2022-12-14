@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4265863449207220663}
   - component: {fileID: -2489978510893027619}
+  - component: {fileID: 6051447204508059226}
   - component: {fileID: 1178318111}
   - component: {fileID: 5455822325156604036}
   - component: {fileID: 1178318112}
-  - component: {fileID: -295068204496884051}
   m_Layer: 0
-  m_Name: EnemyVillager1
+  m_Name: EnemyVillager2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,10 +51,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 3
-  damage: 1
+  damage: 2
   damageCooldown: 10
   animator: {fileID: 344706018651146115}
   enemyMovement: {fileID: 1178318111}
+--- !u!114 &6051447204508059226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937957894814172761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c04c364097cf054c92ed9096e0657e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brain: {fileID: 11400000, guid: ac7006361e5db5d49b149e7874132c55, type: 2}
 --- !u!114 &1178318111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,9 +81,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1178318112}
+  prefab: {fileID: 937957894814172761}
   speedBase: 5
   speed: 0
-  player: {fileID: 2297780671399900066, guid: f2a59cbbed93cad47924faa0c5a40bab, type: 3}
+  player: {x: 0, y: 0}
 --- !u!61 &5455822325156604036
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -118,19 +132,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-295068204496884051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 937957894814172761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c04c364097cf054c92ed9096e0657e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brain: {fileID: 11400000, guid: ac7006361e5db5d49b149e7874132c55, type: 2}
 --- !u!1 &6818318003178765310
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +206,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 536635074, guid: 2dd056cc6388a354387ad87646c291a3, type: 3}
+  m_Sprite: {fileID: 469028471, guid: af4d7cff17ab14941bb30923f212340c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -226,7 +227,7 @@ Animator:
   m_GameObject: {fileID: 6818318003178765310}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 50c8b3ff993b24f4c9ca145b1d10e871, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1444a8195b76d9d45a607a5099b51761, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

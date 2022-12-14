@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void EnemyCount()
+    public void EnemyCount()
     {
         enemies = GameObject.FindObjectsOfType<Enemy>().ToList();
         UpdateEnemiesLeftText();

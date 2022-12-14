@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2eae467ee0cb1c044b9f132bbd63ad34
+guid: 0884b1afad21d1d4ba46e54f8d857334
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,106 +104,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_0
+      name: Schutze_Attack-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 62
-        height: 41
+        width: 43
+        height: 39
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.5232558, y: 0.35897437}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc155c7308ba0584aa044df16b7f93d0
-      internalID: 1620300063
+      spriteID: 1dad1377c9f9d044cbd2cfa6fce93239
+      internalID: 352697522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_1
+      name: Schutze_Attack-Sheet_1
       rect:
         serializedVersion: 2
-        x: 62
+        x: 43
         y: 0
-        width: 62
-        height: 41
+        width: 43
+        height: 39
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.5232558, y: 0.35897437}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9409ca6f509e16c49b845becff108498
-      internalID: 610437194
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 0
-        width: 62
-        height: 41
-      alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aac2944d7bc6a5e42a5fb8828d27f9ed
-      internalID: 1340653519
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 186
-        y: 0
-        width: 62
-        height: 41
-      alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a577683a1297b1428c98671686ae79a
-      internalID: 1763752546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 248
-        y: 0
-        width: 62
-        height: 41
-      alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c09a5ab826f7b43429c2ad2edcbf829f
-      internalID: -904231127
+      spriteID: db669ffe1bd64a64d802aaf1183c88fd
+      internalID: -856274368
       vertices: []
       indices: 
       edges: []
@@ -219,11 +156,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Villager_03_Attack-Sheet_2: 1340653519
-      Villager_03_Attack-Sheet_0: 1620300063
-      Villager_03_Attack-Sheet_3: 1763752546
-      Villager_03_Attack-Sheet_4: -904231127
-      Villager_03_Attack-Sheet_1: 610437194
+      Schutze_Attack-Sheet_0: 352697522
+      Schutze_Attack-Sheet_1: -856274368
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

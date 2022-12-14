@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     private bool damageCheck = false;
 
     private float damaged;
+    [SerializeField] private EnemyMovement enemyMovement;
     
 
     #endregion
@@ -29,7 +30,7 @@ public class Enemy : MonoBehaviour
 
     /*private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.TryGetComponent(out PlayerInputs pI))
         {
             Attack();
             pI.PlayerTakeDamage(damage);
@@ -44,12 +45,6 @@ public class Enemy : MonoBehaviour
             pI.PlayerTakeDamage(damage);
         }
     }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        StartCoroutine(Cooldown());
-    }
-
 
     public void TakeDamage(float damageAmount)
     {
@@ -104,8 +99,9 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
+        enemyMovement.StopMovement();
         animator.SetBool("Death",true);
-        Destroy(gameObject, 0.4f);
+        Destroy(gameObject, 0.3f);
     }
 
     private void Attack()

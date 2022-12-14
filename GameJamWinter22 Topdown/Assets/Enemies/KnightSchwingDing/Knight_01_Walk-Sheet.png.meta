@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2eae467ee0cb1c044b9f132bbd63ad34
+guid: 1e54e28cbbd9baf4581b107d7ca91ae3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,106 +104,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_0
+      name: Knight_01_Walk-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 62
+        width: 48
         height: 41
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.5104167, y: 0.36585364}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc155c7308ba0584aa044df16b7f93d0
-      internalID: 1620300063
+      spriteID: 87287a73aa5b6bd43b898e7f7dedd03f
+      internalID: 690666802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_1
+      name: Knight_01_Walk-Sheet_1
       rect:
         serializedVersion: 2
-        x: 62
+        x: 48
         y: 0
-        width: 62
+        width: 48
         height: 41
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.5104167, y: 0.36585364}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9409ca6f509e16c49b845becff108498
-      internalID: 610437194
+      spriteID: f93ae751a9906854f947f3d425e11829
+      internalID: 583514928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_2
+      name: Knight_01_Walk-Sheet_2
       rect:
         serializedVersion: 2
-        x: 124
+        x: 96
         y: 0
-        width: 62
+        width: 48
         height: 41
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.5104167, y: 0.36585364}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aac2944d7bc6a5e42a5fb8828d27f9ed
-      internalID: 1340653519
+      spriteID: c5deff87e16645343814fadf62867c71
+      internalID: -48575405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_3
+      name: Knight_01_Walk-Sheet_3
       rect:
         serializedVersion: 2
-        x: 186
+        x: 144
         y: 0
-        width: 62
+        width: 48
         height: 41
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.5104167, y: 0.36585364}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a577683a1297b1428c98671686ae79a
-      internalID: 1763752546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 248
-        y: 0
-        width: 62
-        height: 41
-      alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c09a5ab826f7b43429c2ad2edcbf829f
-      internalID: -904231127
+      spriteID: c8ce95354a6913645b4af251fd828fa3
+      internalID: 185444182
       vertices: []
       indices: 
       edges: []
@@ -219,11 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Villager_03_Attack-Sheet_2: 1340653519
-      Villager_03_Attack-Sheet_0: 1620300063
-      Villager_03_Attack-Sheet_3: 1763752546
-      Villager_03_Attack-Sheet_4: -904231127
-      Villager_03_Attack-Sheet_1: 610437194
+      Knight_01_Walk-Sheet_2: -48575405
+      Knight_01_Walk-Sheet_1: 583514928
+      Knight_01_Walk-Sheet_0: 690666802
+      Knight_01_Walk-Sheet_3: 185444182
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

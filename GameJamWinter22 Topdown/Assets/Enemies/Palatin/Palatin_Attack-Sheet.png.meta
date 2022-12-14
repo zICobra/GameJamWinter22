@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2eae467ee0cb1c044b9f132bbd63ad34
+guid: f2dc0f8dc0c847f49a399b5843690f91
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,106 +104,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_0
+      name: Palatin_Attack-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 62
-        height: 41
+        width: 163
+        height: 151
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.46625766, y: 0.49006623}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc155c7308ba0584aa044df16b7f93d0
-      internalID: 1620300063
+      spriteID: 06dc4b4000e04794989957f37fdd4415
+      internalID: 2078066082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_1
+      name: Palatin_Attack-Sheet_1
       rect:
         serializedVersion: 2
-        x: 62
+        x: 163
         y: 0
-        width: 62
-        height: 41
+        width: 163
+        height: 151
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.46625766, y: 0.49006623}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9409ca6f509e16c49b845becff108498
-      internalID: 610437194
+      spriteID: 741448158a0ff6c4ca9241026e722c75
+      internalID: 1120232345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_2
+      name: Palatin_Attack-Sheet_2
       rect:
         serializedVersion: 2
-        x: 124
+        x: 326
         y: 0
-        width: 62
-        height: 41
+        width: 163
+        height: 151
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.46625766, y: 0.49006623}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aac2944d7bc6a5e42a5fb8828d27f9ed
-      internalID: 1340653519
+      spriteID: 5a51dce5c59b63949b042d0efcc63319
+      internalID: 1975109359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_3
+      name: Palatin_Attack-Sheet_3
       rect:
         serializedVersion: 2
-        x: 186
+        x: 489
         y: 0
-        width: 62
-        height: 41
+        width: 163
+        height: 151
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.46625766, y: 0.49006623}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a577683a1297b1428c98671686ae79a
-      internalID: 1763752546
+      spriteID: 9bfe2f2f270732c4ca0aa838de55bcdc
+      internalID: -2048443978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Villager_03_Attack-Sheet_4
+      name: Palatin_Attack-Sheet_4
       rect:
         serializedVersion: 2
-        x: 248
+        x: 652
         y: 0
-        width: 62
-        height: 41
+        width: 163
+        height: 151
       alignment: 9
-      pivot: {x: 0.5, y: 0.29268292}
+      pivot: {x: 0.46625766, y: 0.49006623}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c09a5ab826f7b43429c2ad2edcbf829f
-      internalID: -904231127
+      spriteID: 9a5d3c3619ae3454e8b7f7749d2d9b16
+      internalID: 400002347
       vertices: []
       indices: 
       edges: []
@@ -219,11 +219,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Villager_03_Attack-Sheet_2: 1340653519
-      Villager_03_Attack-Sheet_0: 1620300063
-      Villager_03_Attack-Sheet_3: 1763752546
-      Villager_03_Attack-Sheet_4: -904231127
-      Villager_03_Attack-Sheet_1: 610437194
+      Palatin_Attack-Sheet_0: 2078066082
+      Palatin_Attack-Sheet_1: 1120232345
+      Palatin_Attack-Sheet_2: 1975109359
+      Palatin_Attack-Sheet_3: -2048443978
+      Palatin_Attack-Sheet_4: 400002347
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

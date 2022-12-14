@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1159489233744611571}
   - component: {fileID: 9157858944477237087}
+  - component: {fileID: 5124511500381356850}
   m_Layer: 0
   m_Name: LightningTrigger
   m_TagString: Untagged
@@ -42,7 +43,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.1617943, y: 0.33472574}
@@ -58,6 +59,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4170945, y: 3.2540052}
   m_EdgeRadius: 0
+--- !u!114 &5124511500381356850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037938188716009362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fbab59d189d73943aebe7266eaffb9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2297780671399900070
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,9 +83,10 @@ GameObject:
   - component: {fileID: 2297780671399900064}
   - component: {fileID: 2297780671399900077}
   - component: {fileID: 9044022091620815528}
+  - component: {fileID: 940604091}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b46c3a34b6b0a54589185ad561b555a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  movementSpeed: 10
   playerRigidbody2D: {fileID: 2297780671399900064}
   cam: {fileID: 0}
   animator: {fileID: 4823248175211358328}
@@ -170,6 +184,23 @@ MonoBehaviour:
   health: 0
   maxHealth: 10
   parent: {fileID: 2297780671399900070}
+  playerCollider: {fileID: 940604091}
+--- !u!58 &940604091
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2297780671399900070}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &2297780671783277702
 GameObject:
   m_ObjectHideFlags: 0

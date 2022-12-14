@@ -30,6 +30,10 @@ public class PlayerInputs : MonoBehaviour
     [Header("Health")] 
     [SerializeField] private int health, maxHealth = 10;
     [SerializeField] private GameObject parent;
+    [SerializeField] private CircleCollider2D playerCollider;
+
+    [SerializeField] private Transform enemy;
+    [SerializeField] private Rigidbody2D enemyRb;
     
     private PlayerControls playerControls;
     private Vector2 movement;
@@ -93,29 +97,17 @@ public class PlayerInputs : MonoBehaviour
         Vector2 lookDirection = mousePosition - playerRigidbody2D.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
         playerRigidbody2D.rotation = angle;
-        //RotateSprite();
+        
+        
+        
+        Vector3 lookDirection = enemy.position - transform.position;
+        float angle2 = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+        enemyRb.rotation = angle2;
     }
 
-    /*private void RotateSprite()
-    {
-        if (movement != Vector2.zero)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(transform.forward, movement);
-            Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-
-            playerRigidbody2D.MoveRotation(rotation);
-        }
-    }*/
-    
     #endregion
 
     #region Abillities
-
-    IEnumerator SetFalse()
-    {
-        yield return new WaitForSeconds(0.1f);
-        animator.SetBool("shot", false);
-    }
 
     private void Fire(InputAction.CallbackContext context)
     {
@@ -126,13 +118,7 @@ public class PlayerInputs : MonoBehaviour
         StartCoroutine(SetFalse());
 
     }
-
-    IEnumerator SetFalseLightning()
-    {
-        yield return new WaitForSeconds(0.5f);
-        animator.SetBool("lightning", false);
-        lightningTrigger.SetActive(false);
-    }
+    
     private void Lightning(InputAction.CallbackContext context)
     {
         if (Time.time - usedLightning < lightningCooldown)
@@ -149,15 +135,42 @@ public class PlayerInputs : MonoBehaviour
 
     #endregion
 
+    #region Coroutines
+
+    IEnumerator SetFalseLightning()
+    {
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("lightning", false);
+        lightningTrigger.SetActive(false);
+    }
+    
+    IEnumerator SetFalse()
+    {
+        yield return new WaitForSeconds(0.1f);
+        animator.SetBool("shot", false);
+    }
+
+    IEnumerator PlayerCollider()
+    {
+        yield return new WaitForSeconds(2f);
+        playerCollider.enabled = !playerCollider.enabled;
+    }
+
+    #endregion
+
     #region Health
 
     public void PlayerTakeDamage(int damage)
     {
         health -= damage;
+        playerCollider.enabled = !playerCollider.enabled;
         if (health <= 0)
         {
+            DisableInput();
             Destroy(parent);
         }
+
+        StartCoroutine(PlayerCollider());
     }
 
     #endregion
