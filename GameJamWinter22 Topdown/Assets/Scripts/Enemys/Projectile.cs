@@ -7,13 +7,16 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private int damage;
 
-    [SerializeField] private Transform player;
+    private Transform player;
     private Vector2 target;
+    private PlayerInputs playerInputs;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerInputs = FindObjectOfType<PlayerInputs>();
 
         target = new Vector2(player.position.x, player.position.y);
     }
@@ -33,6 +36,7 @@ public class Projectile : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
+            playerInputs.PlayerTakeDamage(damage);
             DestroyProjectile();
         }
     }

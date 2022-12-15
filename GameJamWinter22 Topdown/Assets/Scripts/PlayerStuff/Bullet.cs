@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -15,10 +12,12 @@ public class Bullet : MonoBehaviour
         {
             return;
         }
+
         if (col.gameObject.TryGetComponent(out Enemy enemyComponent))
         {
             enemyComponent.TakeDamage(1);
         }
+
         Destroy(gameObject);
     }
 

@@ -11,9 +11,7 @@ public class Enemy : MonoBehaviour
     public static event Action<Enemy> OnEnemyKilled;
     [SerializeField] private float health, maxHealth = 3f;
     [SerializeField] private int damage;
-    [SerializeField] private float damageCooldown;
     [SerializeField] private Animator animator;
-    private bool damageCheck = false;
 
     private float damaged;
     [SerializeField] private EnemyMovement enemyMovement;
@@ -28,15 +26,6 @@ public class Enemy : MonoBehaviour
         health = maxHealth;
     }
 
-    /*private void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.TryGetComponent(out PlayerInputs pI))
-        {
-            Attack();
-            pI.PlayerTakeDamage(damage);
-        }
-    }*/
-    
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.TryGetComponent(out PlayerInputs pI))
@@ -81,7 +70,7 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator AttackAnimationCooldown()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.6f);
         animator.SetBool("Attack", false);
     }
 

@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speedBase = 5f;
     [SerializeField] private float speed;
-    [SerializeField] public Transform player;
+    private GameObject player;
     
     private Vector2 movement;
 
@@ -18,19 +18,22 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         float randomSpeed = Random.Range(2f, 4f);
         speed = randomSpeed + speedBase;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void Update()
-    {
-        Vector3 direction = player.position - transform.position;
-        Debug.Log(direction);
-    }
-    
     private void FixedUpdate()
     {
-       Vector3 lookDirection = player.position - transform.position;
-        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-        rb.rotation = angle;
+        RotateToPlayer();
+    }
+
+    void RotateToPlayer()
+    {
+        if (GameObject.FindGameObjectWithTag("Player") == true)
+        {
+            Vector2 lookDirection = transform.position - player.transform.position;
+            float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg +90f;
+            rb.rotation = angle;
+        }
     }
 
     public void StopMovement()

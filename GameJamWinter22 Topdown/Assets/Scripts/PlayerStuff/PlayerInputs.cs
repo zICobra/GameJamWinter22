@@ -23,25 +23,20 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private Transform shootingPoint;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletSpeed = 20f;
-    //[SerializeField] private GameObject lightningPrefab;
     [SerializeField] private GameObject lightningTrigger;
-    [SerializeField] private float lightningCooldown;
+    [SerializeField] public float lightningCooldown;
 
     [Header("Health")] 
-    [SerializeField] private int health, maxHealth = 10;
+    [SerializeField] public int health, maxHealth = 10;
     [SerializeField] private GameObject parent;
     [SerializeField] private CircleCollider2D playerCollider;
-
-    [SerializeField] private Transform enemy;
-    [SerializeField] private Rigidbody2D enemyRb;
+    
     
     private PlayerControls playerControls;
     private Vector2 movement;
     private Vector2 mousePosition;
     private InputAction move;
     private InputAction fire;
-    private InputAction lightning;
-    private float usedLightning;
 
     #endregion
     
@@ -59,10 +54,6 @@ public class PlayerInputs : MonoBehaviour
         fire = playerControls.Player.Fire;
         fire.Enable();
         fire.performed += Fire;
-        
-        lightning = playerControls.Player.Lightning;
-        lightning.Enable();
-        lightning.performed += Lightning;
     }
 
     private void OnDisable()
@@ -99,10 +90,6 @@ public class PlayerInputs : MonoBehaviour
         playerRigidbody2D.rotation = angle;
         
         
-        
-        Vector3 lookDirection = enemy.position - transform.position;
-        float angle2 = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-        enemyRb.rotation = angle2;
     }
 
     #endregion
@@ -119,18 +106,11 @@ public class PlayerInputs : MonoBehaviour
 
     }
     
-    private void Lightning(InputAction.CallbackContext context)
+    public void Lightning()
     {
-        if (Time.time - usedLightning < lightningCooldown)
-        {
-            return;
-        }
-    
-        usedLightning = Time.time;
         animator.SetBool("lightning", true);
         lightningTrigger.SetActive(true);
-        StartCoroutine(SetFalseLightning());
-
+        StartCoroutine(SetFalseLightning()); 
     }
 
     #endregion
@@ -156,6 +136,11 @@ public class PlayerInputs : MonoBehaviour
         playerCollider.enabled = !playerCollider.enabled;
     }
 
+    IEnumerator SkillCooldown()
+    {
+        yield return new WaitForSeconds(lightningCooldown);
+    }
+
     #endregion
 
     #region Health
@@ -168,6 +153,7 @@ public class PlayerInputs : MonoBehaviour
         {
             DisableInput();
             Destroy(parent);
+            Debug.Log("Destroyed");
         }
 
         StartCoroutine(PlayerCollider());
