@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     //[SerializeField] GameObject hitEffect;
-
+    
     private void OnTriggerEnter2D(Collider2D col)
     {
         /*GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
