@@ -13,15 +13,19 @@ public class PalatinRangeAttack : MonoBehaviour
     [SerializeField] private float startTimeBetweenShots;
     [SerializeField] private GameObject projectile;
     [SerializeField] private EnemyMovement enemyMovement;
+    
 
     private float timeBetweenShots;
     private bool inRange;
-
+    
+    public SoundManager soundManager;
     private Transform player;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        
+        soundManager = SoundManager.FindObjectOfType<SoundManager>();
         
         inRange = true;
 
@@ -60,6 +64,7 @@ public class PalatinRangeAttack : MonoBehaviour
                 if (timeBetweenShots <= 0)
                 {
                     Instantiate(projectile, transform.position, transform.rotation);
+                    soundManager.PaladinAttack();
                     timeBetweenShots = startTimeBetweenShots;
                 }
                 else

@@ -12,6 +12,9 @@ public class EnemyShooting : MonoBehaviour
     [SerializeField] private float startTimeBetweenShots;
     [SerializeField] private GameObject projectile;
     [SerializeField] private EnemyMovement enemyMovement;
+    [SerializeField] private AudioSource shootingSoundsAudioSource;
+    [SerializeField] private AudioClip[] shootingSoundsArray;
+    [SerializeField] private bool isPaladinAttack;
 
     private float timeBetweenShots;
     private Transform player;
@@ -50,6 +53,16 @@ public class EnemyShooting : MonoBehaviour
             if (timeBetweenShots <= 0)
             {
                 Instantiate(projectile, transform.position, transform.rotation);
+                if (isPaladinAttack == true)
+                {
+                    
+                }
+                else
+                {
+                    shootingSoundsAudioSource.clip=shootingSoundsArray[Random.Range(0,shootingSoundsArray.Length)];
+                    shootingSoundsAudioSource.PlayOneShot(shootingSoundsAudioSource.clip);
+                }
+                
                 timeBetweenShots = startTimeBetweenShots;
             }
             else

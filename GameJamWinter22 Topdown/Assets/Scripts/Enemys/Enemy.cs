@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
@@ -12,9 +13,17 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float health, maxHealth = 3f;
     [SerializeField] private int damage;
     [SerializeField] private Animator animator;
+    [SerializeField] private bool hasArmor;
+    [SerializeField] private AudioSource strikeSoundAudioSource;
+    [SerializeField] private AudioClip[] strikeSoundArray;
+    [SerializeField] private AudioSource attackVocalAudioSource;
+    [SerializeField] private AudioClip[] attackVocalArray;
 
     private float damaged;
     [SerializeField] private EnemyMovement enemyMovement;
+    
+    public SoundManager soundManager;
+    
     
 
     #endregion
@@ -23,6 +32,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        soundManager = SoundManager.FindObjectOfType<SoundManager>();
         health = maxHealth;
     }
 
@@ -31,6 +41,10 @@ public class Enemy : MonoBehaviour
         if (col.gameObject.TryGetComponent(out PlayerInputs pI))
         {
             Attack();
+            strikeSoundAudioSource.clip=strikeSoundArray[Random.Range(0,strikeSoundArray.Length)];
+            strikeSoundAudioSource.PlayOneShot(strikeSoundAudioSource.clip);
+            attackVocalAudioSource.clip=attackVocalArray[Random.Range(0,attackVocalArray.Length)];
+            attackVocalAudioSource.PlayOneShot(attackVocalAudioSource.clip);
             pI.PlayerTakeDamage(damage);
         }
     }
@@ -39,11 +53,31 @@ public class Enemy : MonoBehaviour
     {
         Damage();
         health -= damageAmount;
+        if (hasArmor == true)
+        {
+           soundManager.KnightGetHit();
+           soundManager.BulletImpactArmor();
+        }
+
+        else
+        {
+            soundManager.PeasantGetHit();
+            soundManager.BulletImpactNoArmor();
+        }
 
         if (health <= 0)
         {
             Death();
             OnEnemyKilled?.Invoke(this);
+            if (hasArmor == true)
+            {
+                soundManager.KnightDying();
+            }
+
+            else
+            {
+                soundManager.PeasantDying();
+            }
         }
     }
 

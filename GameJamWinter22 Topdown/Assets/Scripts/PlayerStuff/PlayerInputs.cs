@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using Quaternion = UnityEngine.Quaternion;
+using Random = UnityEngine.Random;
 using Vector2 = UnityEngine.Vector2;
 
 public class PlayerInputs : MonoBehaviour
@@ -30,6 +31,13 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] public int health, maxHealth = 10;
     [SerializeField] private GameObject parent;
     [SerializeField] private CircleCollider2D playerCollider;
+
+    [Header("Audio")] 
+    [SerializeField] private AudioSource fireSoundsAudioSource;
+    [SerializeField] private AudioClip[] fireSoundsArray;
+    [SerializeField] private AudioSource takeDamageSoundsAudioSource;
+    [SerializeField] private AudioClip[] takeDamageSoundsArray;
+    [SerializeField] private AudioSource lightningSound;
     
     
     private PlayerControls playerControls;
@@ -37,11 +45,13 @@ public class PlayerInputs : MonoBehaviour
     private Vector2 mousePosition;
     private InputAction move;
     private InputAction fire;
+    public SoundManager soundManager;
 
     #endregion
     
     private void Awake()
     {
+        soundManager = SoundManager.FindObjectOfType<SoundManager>();
         playerControls = new PlayerControls();
         health = maxHealth;
     }
@@ -102,6 +112,8 @@ public class PlayerInputs : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, shootingPoint.position, transform.rotation); 
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shootingPoint.up * bulletSpeed, ForceMode2D.Impulse);
+        fireSoundsAudioSource.clip=fireSoundsArray[Random.Range(0,fireSoundsArray.Length)];
+        fireSoundsAudioSource.PlayOneShot(fireSoundsAudioSource.clip);
         StartCoroutine(SetFalse());
 
     }
@@ -110,6 +122,7 @@ public class PlayerInputs : MonoBehaviour
     {
         animator.SetBool("lightning", true);
         lightningTrigger.SetActive(true);
+        lightningSound.Play();
         StartCoroutine(SetFalseLightning()); 
     }
 
@@ -148,9 +161,12 @@ public class PlayerInputs : MonoBehaviour
     public void PlayerTakeDamage(int damage)
     {
         health -= damage;
+        takeDamageSoundsAudioSource.clip=takeDamageSoundsArray[Random.Range(0,takeDamageSoundsArray.Length)];
+        takeDamageSoundsAudioSource.PlayOneShot(takeDamageSoundsAudioSource.clip);
         playerCollider.enabled = !playerCollider.enabled;
         if (health <= 0)
         {
+            soundManager.WitchDying();
             DisableInput();
             Destroy(parent);
             Debug.Log("Destroyed");

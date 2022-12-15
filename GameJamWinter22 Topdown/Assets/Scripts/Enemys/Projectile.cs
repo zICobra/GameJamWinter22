@@ -8,15 +8,18 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private int damage;
+    [SerializeField] private bool isPaladinAttack;
 
     private Transform player;
     private Vector2 target;
     private PlayerInputs playerInputs;
+    public SoundManager soundManager;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerInputs = FindObjectOfType<PlayerInputs>();
+        soundManager = SoundManager.FindObjectOfType<SoundManager>();
 
         target = new Vector2(player.position.x, player.position.y);
     }
@@ -37,6 +40,15 @@ public class Projectile : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             playerInputs.PlayerTakeDamage(damage);
+
+            if (isPaladinAttack == true)
+            {
+                soundManager.PaladinAttack();
+            }
+            else
+            {
+                soundManager.WitchHitByArrow();
+            }
             DestroyProjectile();
         }
     }
