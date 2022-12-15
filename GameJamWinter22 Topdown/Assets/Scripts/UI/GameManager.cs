@@ -8,16 +8,19 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI enemiesLeft;
-    List<Enemy> enemies = new List<Enemy>();
-    private PlayerInputs playerInputs;
     [SerializeField] private Image abilityImage;
     [SerializeField] private float cooldown = 5;
-    private bool isCooldown = false;
-    public KeyCode ability;
-    public KeyCode abilityController;
-    private int playerHealth;
     [SerializeField] private GameObject[] hearts;
     [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private GameObject finishScreen;
+    [SerializeField] private GameObject loseScreen;
+    public KeyCode ability;
+    public KeyCode abilityController;
+    
+    private int playerHealth;
+    private bool isCooldown = false;
+    List<Enemy> enemies = new List<Enemy>();
+    private PlayerInputs playerInputs;
     private float currentTime = 0f;
 
 
@@ -176,5 +179,17 @@ public class GameManager : MonoBehaviour
         string timerString = string.Format("{0:0}:{1:00}:{2:00}", hours, minutes, seconds);
 
         timerText.text = $"Time: {timerString}";
+    }
+
+    public void WonGame()
+    {
+        playerInputs.DisableInput();
+        finishScreen.SetActive(true);
+    }
+
+    public void LoseScreen()
+    {
+        playerInputs.DisableInput();
+        loseScreen.SetActive(true);
     }
 }

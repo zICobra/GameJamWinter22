@@ -8,7 +8,7 @@ public class WaveSpawner : MonoBehaviour
 {
     public enum SpawnState
     {
-        Spawning, Waiting,Counting
+        Spawning, Waiting,Counting,Finished
     }
     
     [System.Serializable]
@@ -46,6 +46,10 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update()
     {
+        if (state == SpawnState.Finished)
+        {
+            return;
+        }
         if (state == SpawnState.Waiting)
         {
             if (!EnemyIsAlive())
@@ -83,7 +87,8 @@ public class WaveSpawner : MonoBehaviour
 
         if (nextWave + 1 > waves.Length -1)
         {
-            Time.timeScale = 0f;
+            state = SpawnState.Finished;
+            gameManager.WonGame();
         }
         else
         {
