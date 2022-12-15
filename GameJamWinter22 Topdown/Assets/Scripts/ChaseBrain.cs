@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Cinemachine;
 using UnityEngine;
 
 [CreateAssetMenu(menuName ="Brains/Chase")]

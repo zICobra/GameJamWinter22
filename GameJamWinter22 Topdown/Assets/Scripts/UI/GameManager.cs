@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,8 +14,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float cooldown = 5;
     private bool isCooldown = false;
     public KeyCode ability;
+    public KeyCode abilityController;
     private int playerHealth;
     [SerializeField] private GameObject[] hearts;
+    [SerializeField] private TextMeshProUGUI timerText;
+    private float currentTime = 0f;
 
 
     private void Start()
@@ -45,6 +48,7 @@ public class GameManager : MonoBehaviour
         playerHealth = playerInputs.health;
         Ability();
         PlayerHealth();
+        TimeTaken();
     }
 
     void HandleEnemyDefeated(Enemy enemy)
@@ -68,21 +72,25 @@ public class GameManager : MonoBehaviour
 
     public void Ability()
     {
-        if (Input.GetKey(ability) && isCooldown == false)
+        if (FindObjectOfType<PlayerInputs>())
         {
-            isCooldown = true;
-            abilityImage.fillAmount = 1;
-            playerInputs.Lightning();
-        }
-
-        if (isCooldown)
-        {
-            abilityImage.fillAmount -= 1 / cooldown * Time.deltaTime;
-
-            if (abilityImage.fillAmount <= 0)
+            if ((Input.GetKey(ability) || Input.GetKey(abilityController)) && isCooldown == false)
             {
-                abilityImage.fillAmount = 0;
-                isCooldown = false;
+                isCooldown = true;
+                abilityImage.fillAmount = 1;
+                playerInputs.Lightning();
+            }
+
+            if (isCooldown)
+            {
+                abilityImage.fillAmount -= 1 / cooldown * Time.deltaTime;
+
+                if (abilityImage.fillAmount <= 0)
+                {
+                    abilityImage.fillAmount = 0;
+                    isCooldown = false;
+                    
+                }
             }
         }
     }
@@ -146,7 +154,7 @@ public class GameManager : MonoBehaviour
                 hearts[4].SetActive(false);
                 hearts[5].SetActive(true);
                 break;
-            case 0:
+            case <=0:
                 hearts[0].SetActive(false);
                 hearts[1].SetActive(false);
                 hearts[2].SetActive(false);
@@ -157,4 +165,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void TimeTaken()
+    {
+        currentTime += 1 * Time.deltaTime;
+
+        int seconds = (int)(currentTime % 60);
+        int minutes = (int)(currentTime / 60) % 60;
+        int hours = (int)(currentTime / 3600) % 24;
+
+        string timerString = string.Format("{0:0}:{1:00}:{2:00}", hours, minutes, seconds);
+
+        timerText.text = $"Time: {timerString}";
+    }
 }

@@ -41,7 +41,7 @@ AudioSource:
   m_GameObject: {fileID: 632643126445721609}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5262386215993909614, guid: c2e806343ace2a44e88f5ae42b8eb228, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -169,7 +169,7 @@ AudioSource:
   m_GameObject: {fileID: 2402653516004372554}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5262386215993909614, guid: c2e806343ace2a44e88f5ae42b8eb228, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 976603297482059623}
   m_Layer: 0
   m_Name: Palatin
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stoppingDistance: 15
   rangeDistance: 10
-  startTimeBetweenShots: 2
+  startTimeBetweenShots: 5
   projectile: {fileID: 7878869081259074204, guid: 04c09b35320a76f4991b736950d0ab7e, type: 3}
   enemyMovement: {fileID: 5421881001514718632}
   soundManager: {fileID: 0}

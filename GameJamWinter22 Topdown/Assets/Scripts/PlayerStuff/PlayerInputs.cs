@@ -1,11 +1,6 @@
-using System;
 using System.Collections;
-using System.Numerics;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using Quaternion = UnityEngine.Quaternion;
 using Random = UnityEngine.Random;
 using Vector2 = UnityEngine.Vector2;
 
@@ -45,7 +40,8 @@ public class PlayerInputs : MonoBehaviour
     private Vector2 mousePosition;
     private InputAction move;
     private InputAction fire;
-    public SoundManager soundManager;
+    private SoundManager soundManager;
+    private VolumeSettings volumeSettings;
 
     #endregion
     
@@ -121,9 +117,9 @@ public class PlayerInputs : MonoBehaviour
     public void Lightning()
     {
         animator.SetBool("lightning", true);
-        lightningTrigger.SetActive(true);
-        lightningSound.Play();
-        StartCoroutine(SetFalseLightning()); 
+            lightningTrigger.SetActive(true);
+            lightningSound.Play();
+            StartCoroutine(SetFalseLightning());
     }
 
     #endregion
@@ -170,6 +166,8 @@ public class PlayerInputs : MonoBehaviour
             DisableInput();
             Destroy(parent);
             Debug.Log("Destroyed");
+            volumeSettings = VolumeSettings.FindObjectOfType<VolumeSettings>();
+            volumeSettings.Death();
         }
 
         StartCoroutine(PlayerCollider());

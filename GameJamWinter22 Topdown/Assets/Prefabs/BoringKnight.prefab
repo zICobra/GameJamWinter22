@@ -41,7 +41,7 @@ AudioSource:
   m_GameObject: {fileID: 3763112277206528141}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5262386215993909614, guid: c2e806343ace2a44e88f5ae42b8eb228, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -169,7 +169,7 @@ AudioSource:
   m_GameObject: {fileID: 6286040730479617099}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5262386215993909614, guid: c2e806343ace2a44e88f5ae42b8eb228, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -377,7 +377,7 @@ GameObject:
   - component: {fileID: 8340632678242841269}
   m_Layer: 0
   m_Name: BoringKnight
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

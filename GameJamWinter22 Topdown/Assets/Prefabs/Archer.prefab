@@ -54,7 +54,13 @@ MonoBehaviour:
   maxHealth: 4
   damage: 3
   animator: {fileID: 2952387332777338206}
+  hasArmor: 0
+  strikeSoundAudioSource: {fileID: 0}
+  strikeSoundArray: []
+  attackVocalAudioSource: {fileID: 0}
+  attackVocalArray: []
   enemyMovement: {fileID: 7426171227544115556}
+  soundManager: {fileID: 0}
 --- !u!114 &5430267559447586963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +83,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 54281bc87a90c9b4190f31cc7bdc227d, type: 3}
   - {fileID: 8300000, guid: cd4ff99a2ede36b4b99e4a242f350a38, type: 3}
   - {fileID: 8300000, guid: afe920c7932efa14eb8f5659ef039d88, type: 3}
+  isPaladinAttack: 0
 --- !u!114 &7426171227544115556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +324,7 @@ AudioSource:
   m_GameObject: {fileID: 9081685287098796772}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5262386215993909614, guid: c2e806343ace2a44e88f5ae42b8eb228, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.756

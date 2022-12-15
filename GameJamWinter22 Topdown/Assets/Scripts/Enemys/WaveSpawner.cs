@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -24,6 +24,8 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private Transform[] spawnPoints;
 
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private TextMeshProUGUI nextWaveText;
+    [SerializeField] private GameObject nextWaveParent;
     
     private int nextWave = 0;
 
@@ -58,6 +60,7 @@ public class WaveSpawner : MonoBehaviour
         
         if (waveCountdown <= 0)
         {
+            nextWaveParent.SetActive(false);
             if (state != SpawnState.Spawning)
             {
                 StartCoroutine(SpawnWave(waves[nextWave]));
@@ -65,7 +68,9 @@ public class WaveSpawner : MonoBehaviour
         }
         else
         {
+            nextWaveParent.SetActive(true);
             waveCountdown -= Time.deltaTime;
+            nextWaveText.text = $"Next Wave : {Mathf.Round(waveCountdown)}";
         }
     }
 
@@ -78,7 +83,7 @@ public class WaveSpawner : MonoBehaviour
 
         if (nextWave + 1 > waves.Length -1)
         {
-            Debug.Log("All waves completed");
+            Time.timeScale = 0f;
         }
         else
         {

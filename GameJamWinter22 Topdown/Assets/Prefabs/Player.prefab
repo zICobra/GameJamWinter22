@@ -41,7 +41,7 @@ AudioSource:
   m_GameObject: {fileID: 229380245735453132}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5262386215993909614, guid: c2e806343ace2a44e88f5ae42b8eb228, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbab59d189d73943aebe7266eaffb9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundManager: {fileID: 0}
 --- !u!1 &1738251731794878867
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +241,7 @@ AudioSource:
   m_GameObject: {fileID: 1738251731794878867}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5262386215993909614, guid: c2e806343ace2a44e88f5ae42b8eb228, type: 2}
   m_audioClip: {fileID: 8300000, guid: 2a01e17fae79f044bae9c100a71741d3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -453,6 +454,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d8c5d724c70838b40b7cdcd955b6689f, type: 3}
   - {fileID: 8300000, guid: 6476854eaf8124e4ba778c1877a85d1a, type: 3}
   lightningSound: {fileID: 3428326650204973940}
+  soundManager: {fileID: 0}
 --- !u!58 &940604091
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -649,7 +651,7 @@ AudioSource:
   m_GameObject: {fileID: 7541338741817119977}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 5262386215993909614, guid: c2e806343ace2a44e88f5ae42b8eb228, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

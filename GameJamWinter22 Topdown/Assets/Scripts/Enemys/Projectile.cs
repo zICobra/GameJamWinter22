@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private int damage;
+    [SerializeField] private int health;
     [SerializeField] private bool isPaladinAttack;
 
     private Transform player;
@@ -37,11 +34,16 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            return;
+        }
+        
         if (col.CompareTag("Player"))
         {
             playerInputs.PlayerTakeDamage(damage);
 
-            if (isPaladinAttack == true)
+            if (isPaladinAttack)
             {
                 soundManager.PaladinAttack();
             }
@@ -56,5 +58,15 @@ public class Projectile : MonoBehaviour
     private void DestroyProjectile()
     {
         Destroy(gameObject);
+    }
+
+    public void Health(int damage)
+    {
+        health -= damage;
+        
+        if (health <= 0)
+        {
+            DestroyProjectile();
+        }
     }
 }

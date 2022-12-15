@@ -13,6 +13,11 @@ public class Bullet : MonoBehaviour
             return;
         }
 
+        if (col.gameObject.TryGetComponent(out Projectile projectile))
+        {
+            projectile.Health(1);
+        }
+
         if (col.gameObject.TryGetComponent(out Enemy enemyComponent))
         {
             enemyComponent.TakeDamage(1);
