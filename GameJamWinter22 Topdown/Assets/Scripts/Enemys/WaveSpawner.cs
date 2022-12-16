@@ -130,8 +130,6 @@ public class WaveSpawner : MonoBehaviour
         }
 
         state = SpawnState.Waiting;
-        
-        yield break;
     }
 
     void SpawnEnemy(List<Transform> enemy)

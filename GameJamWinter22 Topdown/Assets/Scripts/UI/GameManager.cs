@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     
     private int playerHealth;
     private bool isCooldown = false;
-    List<Enemy> enemies = new List<Enemy>();
+    public List<Enemy> enemies = new List<Enemy>();
     private PlayerInputs playerInputs;
     private float currentTime = 0f;
 
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void EnemyCount()
     {
-        enemies = GameObject.FindObjectsOfType<Enemy>().ToList();
+        enemies = FindObjectsOfType<Enemy>().ToList();
         UpdateEnemiesLeftText();
     }
 

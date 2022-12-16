@@ -427,6 +427,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 787f3f28d54c8104a9559337663dd61c, type: 3}
   - {fileID: 8300000, guid: 60dec75250ea84b4394b5399d7636e1a, type: 3}
   - {fileID: 8300000, guid: 68048a8356a57274e9729c9988295e1f, type: 3}
+  collider: {fileID: 8340632678242841269}
   enemyMovement: {fileID: 1402981768447370681}
   soundManager: {fileID: 0}
 --- !u!114 &1402981768447370681
