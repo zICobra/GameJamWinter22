@@ -8,11 +8,14 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float speedBase = 5f;
     [SerializeField] private float speed;
     private GameObject player;
+    private Enemy enemy;
+    private bool isDead = false;
     
     private Vector2 movement;
 
     private void Start()
     {
+        enemy = GetComponent<Enemy>();
         rb = GetComponent<Rigidbody2D>();
         float randomSpeed = Random.Range(2f, 4f);
         speed = randomSpeed + speedBase;
@@ -22,15 +25,19 @@ public class EnemyMovement : MonoBehaviour
     private void FixedUpdate()
     {
         RotateToPlayer();
+        isDead = enemy.isMurdered;
     }
 
     void RotateToPlayer()
     {
-        if (GameObject.FindGameObjectWithTag("Player") == true)
+        if (GameObject.FindGameObjectWithTag("Player") == true) ;
         {
-            Vector2 lookDirection = transform.position - player.transform.position;
-            float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg +90f;
-            rb.rotation = angle;
+            if (isDead == false)
+            {
+                Vector2 lookDirection = transform.position - player.transform.position;
+                float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg +90f;
+                rb.rotation = angle;
+            }
         }
     }
 

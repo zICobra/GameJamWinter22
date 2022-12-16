@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyMovement enemyMovement;
     
     public SoundManager soundManager;
+    public bool isMurdered = false;
     
     
 
@@ -123,9 +124,10 @@ public class Enemy : MonoBehaviour
 
     private void Death()
     {
+        isMurdered = true;
         enemyMovement.StopMovement();
         animator.SetBool("Death",true);
-        Destroy(gameObject, 0.3f);
+        Destroy(gameObject, 1f);
     }
 
     private void Attack()
