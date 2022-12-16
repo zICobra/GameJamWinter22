@@ -59,6 +59,7 @@ MonoBehaviour:
   strikeSoundArray: []
   attackVocalAudioSource: {fileID: 0}
   attackVocalArray: []
+  collider: {fileID: 2661171728778096503}
   enemyMovement: {fileID: 7426171227544115556}
   soundManager: {fileID: 0}
 --- !u!114 &5430267559447586963
