@@ -1,11 +1,6 @@
-using System;
 using System.Collections;
-using System.ComponentModel;
-using Unity.VisualScripting;
-using UnityEditor.Searcher;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Users;
 using Random = UnityEngine.Random;
 using Vector2 = UnityEngine.Vector2;
 
