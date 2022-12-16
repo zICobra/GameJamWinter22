@@ -27,10 +27,17 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nextWaveText;
     [SerializeField] private GameObject nextWaveParent;
     
-    private int nextWave = 0;
+    [SerializeField] private int nextWave = 0;
 
     [SerializeField] private float timeBetweenWaves = 5f;
     [SerializeField] private float waveCountdown;
+
+    [SerializeField] private GameObject earlyGameMusic;
+    [SerializeField] private GameObject midGameMusic;
+    [SerializeField] private GameObject lateGameMusic;
+    [SerializeField] private GameObject gameWonMusic;
+
+    private int enemyType;
     private float searchCountdown = 1f;
 
     private SpawnState state = SpawnState.Counting;
@@ -88,6 +95,7 @@ public class WaveSpawner : MonoBehaviour
         if (nextWave + 1 > waves.Length -1)
         {
             state = SpawnState.Finished;
+            gameWonMusic.SetActive(true);
             gameManager.WonGame();
         }
         else
@@ -129,8 +137,198 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(List<Transform> enemy)
     {
         Transform sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        int spawnEnemy = Random.Range(0, enemy.Count);
-        Transform Prefab = Instantiate(enemy[spawnEnemy], sp.position, sp.rotation);
+        if (nextWave + 1 <= 2)
+        {
+            int spawnEnemy = Random.Range(0, enemy.Count);
+            Instantiate(enemy[spawnEnemy], sp.position, sp.rotation);
+        }
+        else
+        {
+            float spawnEnemy = Random.Range(0.0f, 1.0f);
+            if (nextWave + 1 == 3)
+            {
+                earlyGameMusic.SetActive(false);
+                midGameMusic.SetActive(true);
+                if (spawnEnemy >= 0.0 && spawnEnemy <= 0.30f)
+                {
+                    enemyType = 0;
+                }
+                else if (spawnEnemy >0.30 && spawnEnemy <= 0.60f)
+                {
+                    enemyType = 1;
+                }
+                else if (spawnEnemy > 0.60 && spawnEnemy <= 0.9f)
+                {
+                    enemyType = 2;
+                }
+                else
+                {
+                    enemyType = 3;
+                }
+                Instantiate(enemy[enemyType], sp.position, sp.rotation);
+            }
+            
+            if (nextWave + 1 == 4)
+            {
+                if (spawnEnemy >= 0.0 && spawnEnemy <= 0.25f)
+                {
+                    enemyType = 0;
+                }
+                else if (spawnEnemy >0.25 && spawnEnemy <= 0.57f)
+                {
+                    enemyType = 1;
+                }
+                else if (spawnEnemy > 0.57 && spawnEnemy <= 0.88f)
+                {
+                    enemyType = 2;
+                }
+                else
+                {
+                    enemyType = 3;
+                }
+                Instantiate(enemy[enemyType], sp.position, sp.rotation);
+            }
+            
+            if (nextWave + 1 == 5)
+            {
+                if (spawnEnemy >= 0.0 && spawnEnemy <= 0.23f)
+                {
+                    enemyType = 0;
+                }
+                else if (spawnEnemy >0.23 && spawnEnemy <= 0.46f)
+                {
+                    enemyType = 1;
+                }
+                else if (spawnEnemy > 0.46 && spawnEnemy <= 0.69f)
+                {
+                    enemyType = 2;
+                }
+                else if (spawnEnemy > 0.69 && spawnEnemy <= 0.85f)
+                {
+                    enemyType = 3;
+                }
+                else
+                {
+                    enemyType = 4;
+                }
+                Instantiate(enemy[enemyType], sp.position, sp.rotation);
+            }
+            
+            if (nextWave + 1 == 6)
+            {
+                if (spawnEnemy >= 0.0 && spawnEnemy <= 0.23f)
+                {
+                    enemyType = 0;
+                }
+                else if (spawnEnemy >0.23 && spawnEnemy <= 0.46f)
+                {
+                    enemyType = 1;
+                }
+                else if (spawnEnemy > 0.46 && spawnEnemy <= 0.69f)
+                {
+                    enemyType = 2;
+                }
+                else if (spawnEnemy > 0.69 && spawnEnemy <= 0.85f)
+                {
+                    enemyType = 3;
+                }
+                else
+                {
+                    enemyType = 4;
+                }
+                Instantiate(enemy[enemyType], sp.position, sp.rotation);
+            }
+            
+            if (nextWave + 1 == 7)
+            {
+                midGameMusic.SetActive(false);
+                lateGameMusic.SetActive(true);
+                if (spawnEnemy >= 0.0 && spawnEnemy <= 0.20f)
+                {
+                    enemyType = 0;
+                }
+                else if (spawnEnemy > 0.20 && spawnEnemy <= 0.40f)
+                {
+                    enemyType = 1;
+                }
+                else if (spawnEnemy > 0.40 && spawnEnemy <= 0.60f)
+                {
+                    enemyType = 2;
+                }
+                else if (spawnEnemy > 0.60 && spawnEnemy <= 0.80f)
+                {
+                    enemyType = 3;
+                }
+                else
+                {
+                    enemyType = 4;
+                }
+                Instantiate(enemy[enemyType], sp.position, sp.rotation);
+            }
+            
+            if (nextWave + 1 == 8)
+            {
+                if (spawnEnemy >= 0.0 && spawnEnemy <= 0.32f)
+                {
+                    enemyType = 0;
+                }
+                else if (spawnEnemy >0.32 && spawnEnemy <= 0.64f)
+                {
+                    enemyType = 1;
+                }
+                else if (spawnEnemy > 0.64 && spawnEnemy <= 0.98f)
+                {
+                    enemyType = 2;
+                }
+                else
+                {
+                    enemyType = 3;
+                }
+                Instantiate(enemy[enemyType], sp.position, sp.rotation);
+            }
+            
+            if (nextWave + 1 == 9)
+            {
+                if (spawnEnemy >= 0.0 && spawnEnemy <= 0.31f)
+                {
+                    enemyType = 0;
+                }
+                else if (spawnEnemy >0.31 && spawnEnemy <= 0.62f)
+                {
+                    enemyType = 1;
+                }
+                else if (spawnEnemy > 0.62 && spawnEnemy <= 0.96f)
+                {
+                    enemyType = 2;
+                }
+                else
+                {
+                    enemyType = 3;
+                }
+                Instantiate(enemy[enemyType], sp.position, sp.rotation);
+            }
+            
+            if (nextWave + 1 == 10)
+            {
+                if (spawnEnemy >= 0.0 && spawnEnemy <= 0.30f)
+                {
+                    enemyType = 0;
+                }
+                else if (spawnEnemy >0.30 && spawnEnemy <= 0.60f)
+                {
+                    enemyType = 1;
+                }
+                else if (spawnEnemy > 0.60 && spawnEnemy <= 0.90f)
+                {
+                    enemyType = 2;
+                }
+                else
+                {
+                    enemyType = 3;
+                }
+                Instantiate(enemy[enemyType], sp.position, sp.rotation);
+            }
+        }
         gameManager.EnemyCount();
     }
     

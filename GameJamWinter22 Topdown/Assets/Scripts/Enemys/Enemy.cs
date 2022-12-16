@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private AudioClip[] strikeSoundArray;
     [SerializeField] private AudioSource attackVocalAudioSource;
     [SerializeField] private AudioClip[] attackVocalArray;
+    [SerializeField] private Collider2D collider;
 
     private float damaged;
     [SerializeField] private EnemyMovement enemyMovement;
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         soundManager = SoundManager.FindObjectOfType<SoundManager>();
+        collider = GetComponent<Collider2D>();
         health = maxHealth;
     }
 
@@ -65,6 +67,7 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            collider.enabled = !collider.enabled;
             Death();
             OnEnemyKilled?.Invoke(this);
             if (hasArmor == true)

@@ -7,8 +7,6 @@ public class SoundManager : MonoBehaviour
    [SerializeField] private AudioSource witchDyingAudioSource;
    [SerializeField] private AudioSource witchHitByArrowAudioSource;
    [SerializeField] private AudioClip[] witchHitByArrowArray;
-   [SerializeField] private AudioSource musicAudioSource;
-   [SerializeField] private AudioClip[] musicArray;
    [SerializeField] private AudioSource paladinAttackAudioSource;
    [SerializeField] private AudioClip[] paladinAttackArray;
    [SerializeField] private AudioSource peasantDyingAudioSource;
@@ -26,13 +24,6 @@ public class SoundManager : MonoBehaviour
    [SerializeField] private AudioClip[] bulletImpactArmorArray;
    [SerializeField] private AudioSource paladinHitAudioSource;
    [SerializeField] private AudioClip[] paladinHitArray;
-   
-
-   private void Awake()
-   {
-      musicAudioSource.clip=musicArray[Random.Range(0,musicArray.Length)];
-      musicAudioSource.PlayOneShot(musicAudioSource.clip);
-   }
 
    public void WitchDying()
    {

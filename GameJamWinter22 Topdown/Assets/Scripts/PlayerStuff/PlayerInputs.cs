@@ -38,6 +38,11 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private AudioClip[] takeDamageSoundsArray;
     [SerializeField] private AudioSource lightningSound;
 
+    [SerializeField] private GameObject earlyGameMusic;
+    [SerializeField] private GameObject midGameMusic;
+    [SerializeField] private GameObject lateGameMusic;
+    [SerializeField] private GameObject gameOverMusic;
+
     [Header("Gamepad")] 
     [SerializeField] private float controllerDeadzone = 0.1f;
     [SerializeField] private float gamepadRotationSmoothing = 1000f;
@@ -217,6 +222,10 @@ public class PlayerInputs : MonoBehaviour
             DisableInput();
             Destroy(parent);
             Debug.Log("Destroyed");
+            earlyGameMusic.SetActive(false);
+            midGameMusic.SetActive(false);
+            lateGameMusic.SetActive(false);
+            gameOverMusic.SetActive(true);
             volumeSettings.Death();
             gameManager.LoseScreen();
             
