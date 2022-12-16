@@ -12,6 +12,10 @@ public class Bullet : MonoBehaviour
         {
             return;
         }
+        if (col.gameObject.CompareTag("BorderCollider"))
+        {
+            return;
+        }
 
         if (col.gameObject.TryGetComponent(out Projectile projectile))
         {

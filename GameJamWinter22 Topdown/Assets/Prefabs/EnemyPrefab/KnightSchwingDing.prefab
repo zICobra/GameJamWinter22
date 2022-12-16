@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2272170032641900669}
   - component: {fileID: 9164437182960925243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StrikeSoundAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3932239259209451421}
   - component: {fileID: 6888968963077656821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackVocalAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 6622231962046511796}
   - component: {fileID: 4651765600849338536}
   - component: {fileID: 1525746785433403925}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 4867946864275870710}
   - component: {fileID: 6251333451820122787}
   - component: {fileID: 8741230330453425997}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: KnightSchwingDing
   m_TagString: Enemy
   m_Icon: {fileID: 0}

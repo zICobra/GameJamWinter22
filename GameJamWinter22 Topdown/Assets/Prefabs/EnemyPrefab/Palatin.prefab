@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8735978775717975334}
   - component: {fileID: 8663410818891788979}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StrikeSoundAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7060484930658548509}
   - component: {fileID: 8622885124372824074}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackVocalAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 5421881001514718632}
   - component: {fileID: 6202402082650654653}
   - component: {fileID: 976603297482059623}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Palatin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 3426715089695467822}
   - component: {fileID: 1352831570062974205}
   - component: {fileID: 1325232794572527095}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

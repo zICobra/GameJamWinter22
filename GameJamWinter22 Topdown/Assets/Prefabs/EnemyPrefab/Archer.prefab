@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7426171227544115556}
   - component: {fileID: 2661171728778096503}
   - component: {fileID: 1531370321}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Archer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1979013768865006836}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 3152510960111617284}
   - component: {fileID: 2411982309235855118}
   - component: {fileID: 2952387332777338206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2134280995513879592}
   - component: {fileID: 6327078715888636390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShootingSoundAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}

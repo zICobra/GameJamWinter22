@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1178318111}
   - component: {fileID: 5455822325156604036}
   - component: {fileID: 1178318112}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyVillager2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3966672454895334296}
   - component: {fileID: 704404321092127865}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StrikeSoundAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1355724692115941095}
   - component: {fileID: 3403855422143796830}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackVocalAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 7852360005851715888}
   - component: {fileID: 7122294210718368520}
   - component: {fileID: 344706018651146115}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

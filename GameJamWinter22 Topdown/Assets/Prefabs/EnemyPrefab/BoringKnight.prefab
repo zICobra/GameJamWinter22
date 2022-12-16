@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2389748887035632385}
   - component: {fileID: 8392120089849856217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackVocalAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5732332788185871693}
   - component: {fileID: 409531096139805470}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StrikeSoundAudioSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 95458409393751118}
   - component: {fileID: 3965870974888124804}
   - component: {fileID: 4191632355067444892}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 8636594026213759234}
   - component: {fileID: 311324096398419728}
   - component: {fileID: 8340632678242841269}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BoringKnight
   m_TagString: Enemy
   m_Icon: {fileID: 0}

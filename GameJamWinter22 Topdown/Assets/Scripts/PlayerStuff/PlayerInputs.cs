@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.ComponentModel;
 using Unity.VisualScripting;
@@ -18,6 +19,7 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private Rigidbody2D playerRigidbody2D;
     [SerializeField] private Camera cam;
     [SerializeField] private Animator animator;
+    [SerializeField] private Collider2D borderCollider;
     
     [Header("Abillities")] 
     [SerializeField] private Transform shootingPoint;
@@ -46,7 +48,6 @@ public class PlayerInputs : MonoBehaviour
 
     [Header("Gamepad")] 
     [SerializeField] private float controllerDeadzone = 0.1f;
-    [SerializeField] private float gamepadRotationSmoothing = 1000f;
     [SerializeField] private bool isGamepad;
     
     
@@ -102,6 +103,14 @@ public class PlayerInputs : MonoBehaviour
         playerControls.Disable();
     }
 
+    /*private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Enemy"))
+        {
+            Physics2D.IgnoreCollision(borderCollider, GetComponent<Collider2D>(), true);
+        }
+    }*/
+
     #region Movement
 
     public void OnDeviceChange(PlayerInput pi)
@@ -117,7 +126,7 @@ public class PlayerInputs : MonoBehaviour
         
         look.x = Input.GetAxis("Mouse X");
         look.y = Input.GetAxis("Mouse Y");
-        
+
     }
 
     private void FixedUpdate()

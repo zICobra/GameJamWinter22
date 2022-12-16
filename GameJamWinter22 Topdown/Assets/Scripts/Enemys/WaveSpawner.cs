@@ -127,6 +127,7 @@ public class WaveSpawner : MonoBehaviour
         {
             SpawnEnemy ( _wave.enemy);
             yield return new WaitForSeconds (1f / _wave.spawnRate);
+            gameManager.EnemyCount();
         }
 
         state = SpawnState.Waiting;
@@ -327,7 +328,6 @@ public class WaveSpawner : MonoBehaviour
                 Instantiate(enemy[enemyType], sp.position, sp.rotation);
             }
         }
-        gameManager.EnemyCount();
     }
     
 }
