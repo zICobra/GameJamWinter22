@@ -25,6 +25,7 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private float bulletSpeed = 20f;
     [SerializeField] private GameObject lightningTrigger;
     [SerializeField] public float lightningCooldown;
+    [SerializeField] private GameObject lightningLight;
 
     [Header("Health")] 
     [SerializeField] public int health, maxHealth = 10;
@@ -175,9 +176,10 @@ public class PlayerInputs : MonoBehaviour
     public void Lightning()
     {
         animator.SetBool("lightning", true);
-            lightningTrigger.SetActive(true);
-            lightningSound.Play();
-            StartCoroutine(SetFalseLightning());
+        lightningTrigger.SetActive(true);
+        lightningLight.SetActive(true);
+        lightningSound.Play();
+        StartCoroutine(SetFalseLightning());
     }
 
     #endregion
@@ -191,9 +193,10 @@ public class PlayerInputs : MonoBehaviour
         
         yield return new WaitForSeconds(0.4f);
         animator.SetBool("lightning", false);
+        lightningLight.SetActive(false);
     }
-    
-    IEnumerator SetFalse()
+
+   IEnumerator SetFalse()
     {
         yield return new WaitForSeconds(0.1f);
         animator.SetBool("shot", false);

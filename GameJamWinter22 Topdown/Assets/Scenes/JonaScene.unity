@@ -10110,6 +10110,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesLeft: {fileID: 2085127569}
+  abilityImage: {fileID: 0}
+  cooldown: 5
+  hearts: []
+  timerText: {fileID: 0}
+  finishScreen: {fileID: 0}
+  loseScreen: {fileID: 0}
+  ability: 0
+  abilityController: 0
 --- !u!4 &626171938
 Transform:
   m_ObjectHideFlags: 0
@@ -10140,23 +10148,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - name: Wave 1
-    enemy: {fileID: 4265863449207220663, guid: 50fbc36bf3282d54db8c0168f161e547, type: 3}
+    enemy:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     enemyCount: 4
     spawnRate: 2
   - name: Wave 2
-    enemy: {fileID: 4265863449207220663, guid: 50fbc36bf3282d54db8c0168f161e547, type: 3}
+    enemy:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     enemyCount: 7
     spawnRate: 3
   - name: Wave 3
-    enemy: {fileID: 4265863449207220663, guid: 50fbc36bf3282d54db8c0168f161e547, type: 3}
+    enemy:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     enemyCount: 10
     spawnRate: 4
   spawnPoints:
   - {fileID: 15254036}
   - {fileID: 1932659848}
   - {fileID: 990345340}
+  gameManager: {fileID: 0}
+  nextWaveText: {fileID: 0}
+  nextWaveParent: {fileID: 0}
+  nextWave: 0
   timeBetweenWaves: 5
   waveCountdown: 0
+  earlyGameMusic: {fileID: 0}
+  midGameMusic: {fileID: 0}
+  lateGameMusic: {fileID: 0}
+  gameWonMusic: {fileID: 0}
 --- !u!1 &658186621
 GameObject:
   m_ObjectHideFlags: 0
